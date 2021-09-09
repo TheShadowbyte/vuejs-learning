@@ -5,7 +5,8 @@ const app = Vue.createApp(
                 courseGoal: 'First goal',
                 courseGoalA: 'Finish the course and learn Vue',
                 courseGoalB: 'Master Vue and build apps',
-                vueLink: 'https://vuejs.org'
+                vueLink: 'https://vuejs.org',
+                htmlContent: '<i>This text is wrapped in an HTML italics tag</i>'
             };
         },
         methods: {
