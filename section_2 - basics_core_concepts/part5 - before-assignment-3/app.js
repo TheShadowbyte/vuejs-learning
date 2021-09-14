@@ -2,18 +2,33 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: ''
+      name: '',
+      lastName: '',
+      watchFirstName: ''
     };
   },
   computed: {
     fullName() {
       // This method is handled like a data property and runs only
-      // when the values on one or more of its dependencies change
+      // when the values on one or more of its dependencies change.
+      // Computer properties are better than watchers because you can
+      // track / "watch for" more than one data property, whereas
+      // watcher methods only watch one data property per method.
       console.log('fullName is ran');
-      if (this.name === '') {
+      if (this.name === '' || this.lastName === '') {
         return '';
       }
-      return this.name + ' ' + 'Smith';
+      return this.name + ' ' + this.lastName;
+    }
+  },
+  watch: {
+    watchFirstName(value) {
+      console.log('First name changed to: ' + value);
+    },
+    counter(value) {
+      if (value > 50) {
+        console.log('counter is greater than 50');
+      }
     }
   },
   methods: {
