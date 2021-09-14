@@ -26,6 +26,7 @@
       <input type="text" v-model="lastName">
       <button v-on:click="resetInput">Reset Input</button>
       <button @click="resetInput">Reset Input (Shorthand Directive)</button>
+      <input type="text" :value="name" />
       <p>First Name: {{ name }}</p>
       <p>Full Name (Computer Properties): {{ fullName }}</p>
 
